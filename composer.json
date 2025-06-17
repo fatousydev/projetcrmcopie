@@ -1,0 +1,13 @@
+{
+    "name": "kine/projetcrmcopie",
+    "autoload": {
+        "psr-4": {
+            "Kine\\Projetcrmcopie\\": "src/"
+        }
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.0",
+        "tecnickcom/tcpdf": "^6.8",
+        "phpmailer/phpmailer": "^6.9"
+    }
+}
