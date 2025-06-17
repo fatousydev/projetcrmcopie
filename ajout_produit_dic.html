@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pamecas - Gestion Client</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* En-tête */
+    header {
+      background-color: #65a3f3;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .user-info span {
+      background-color: #0368d9;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: white;
+    }
+    header .logout {
+      background-color: rgb(236, 9, 9);
+      color:white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contenu principal */
+    main {
+      padding: 20px;
+      background-color:#2c3e50;
+    }
+
+    /* Formulaire d'ajout de client */
+    .form-produit {
+      margin-bottom:100px;
+      padding: 15px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+    .form-produit input, .form-client select, .form-client textarea {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    /* Tableau des clients */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- En-tête -->
+  <header>
+    <div class="logo">
+      <img src="pamecas.jpg" alt="Pamecas" width="70">
+      <h1>PAMECAS - GESTION DE LA RELATION CLIENT</h1>
+    </div>
+    <div class="user-info">
+      <span>A</span>
+      <a href="index.html" class="logout">Logout</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Formulaire d'ajout de produit -->
+    <h2 style="text-align: center; color:white;" >Ajouter Produit</h2>
+    <div class="form-produit">
+      <form action="ajout_produit.php" method="POST">
+        <label for="">Nom du produit</label><br>
+        <input type="text" name="nom_produit" placeholder="Nom du produit" required><br>
+       <label for="type_produit	">Type produit</label><br><br>
+        <select name=" type_produit">
+            <option value="Épargne">Épargne</option>
+            <option value="Crédit">Crédit</option>
+            <option value="Assurance">Assurance</option>
+            <option value="Autre">Autre</option>
+        </select><br><br>
+        <label for="">Description</label><br>
+        <input type="text" name="description" placeholder="Description" required><br>
+        <label for="">conditions</label><br>
+        <input type="text" name="conditions" placeholder="conditions" required><br>
+         <label for="">Taux d'Intérêt</label><br>
+        <input type="text" name="taux_interet" placeholder="Taux d'Intérêt (%)"><br>
+        <label for="">Montant</label><br>
+        <input type="text" name="montant" placeholder="Montant"><br>
+        <label for="">Date creaction</label><br>
+        <input type="date" name="created_at" placeholder="Date creaction"><br>
+        <label for="">Date de mise à jour</label><br>
+        <input type="date" name="updated_at" placeholder="Date de mise à jour">
+        <button type="submit" name="ajouter">Ajouter</button>
+        <button type="submit" name="retour"><a href="interfacedirecteur.php">Retour</a></button>
+    </form>
+    
+    </div>
+  <script>
+    // Fonction spour le bouton "Logout"
+    document.querySelector('.logout').addEventListener('click', () => {
+      alert('Déconnexion en cours...');
+    });
+  </script>
+</body>
+</html>
+
+
+
