@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pamecas - Gestion Membre Individuel</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* En-tête */
+    header {
+      background-color: #65a3f3;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .user-info span {
+      background-color: #0368d9;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: white;
+    }
+    header .logout {
+      background-color: rgb(236, 9, 9);
+      color:white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contenu principal */
+    main {
+      padding: 20px;
+      background-color:#2c3e50;
+    }
+
+    /* Formulaire d'ajout de client */
+    .form-client {
+      margin-bottom:100px;
+      padding: 15px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+    .form-client input, .form-client select, .form-client textarea {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group {
+      display: flex;
+      gap: 20px;
+    }
+    .form-group div {
+      flex: 1;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .btn-secondary {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .btn-secondary:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <!-- En-tête -->
+  <header>
+    <div class="logo">
+      <img src="pamecas.jpg" alt="Pamecas" width="70">
+      <h1>PAMECAS - GESTION DES MEMBRES INDIVIDUELS</h1>
+    </div>
+    <div class="user-info">
+      <span>A</span>
+      <a href="index.html" class="logout">Logout</a>
+    </div>
+  </header>
+  <main>
+    <!-- Formulaire d'ajout de membre individuel -->
+    <h2 style="text-align: center; color:white">Ajouter membre individuel</h2>
+    <div class="form-client">
+      <form action="ajout_membre_individuel.php" method="POST">
+        <div class="form-group">
+          <div>
+            <label for="numero_membre">Numéro membre</label>
+            <input type="text" id="numero_membre" name="numero_membre" required>
+          </div>
+          <div>
+            <label for="statut">Statut</label>
+            <select id="statut" name="statut" required>
+              <option value="Actif">Actif</option>
+              <option value="Inactif">Inactif</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="date_admission">Date admission</label>
+            <input type="date" id="date_admission" name="date_admission" required>
+          </div>
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+          <div>
+            <label for="fonction">Fonction</label>
+            <input type="text" id="fonction" name="fonction">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="num_telephone">Téléphone</label>
+            <input type="text" id="num_telephone" name="num_telephone" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="region">Région</label>
+            <input type="text" id="region" name="region" required>
+          </div>
+          <div>
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="numero_piece">Numéro pièce d'identité</label>
+            <input type="text" id="numero_piece" name="numero_piece" required>
+          </div>
+          <div>
+            <label for="numero_passeport">Numéro passeport</label>
+            <input type="text" id="numero_passeport" name="numero_passeport">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="besoins">Besoins</label>
+            <input type="text" id="besoins" name="besoins">
+          </div>
+          <div>
+            <label for="source_connaissance">Source de connaissance</label>
+            <input type="text" id="source_connaissance" name="source_connaissance">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="personne_contact">Personne à contacter</label>
+            <input type="text" id="personne_contact" name="personne_contact">
+          </div>
+          <div>
+            <label for="relation_contact">Relation avec le contact</label>
+            <select id="relation_contact" name="relation_contact">
+              <option value="Famille">Famille</option>
+              <option value="Amis">Amis</option>
+              <option value="Professionnel">Professionnel</option>
+              <option value="Garant">Garant</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="telephone_contact">Téléphone contact</label>
+            <input type="text" id="telephone_contact" name="telephone_contact">
+          </div>
+          <div>
+            <label for="commentaire">Commentaire</label>
+            <input type="text" id="commentaire" name="commentaire">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="campagne_id">ID Campagne</label>
+            <input type="number" id="campagne_id" name="campagne_id">
+          </div>
+          <div>
+            <label for="caisse_id">ID Caisse</label>
+            <input type="number" id="caisse_id" name="caisse_id">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="guichet_id">ID Guichet</label>
+            <input type="number" id="guichet_id" name="guichet_id">
+          </div>
+          <div>
+            <label for="a_benefice_credit">A bénéficié de crédit?</label>
+            <select id="a_benefice_credit" name="a_benefice_credit">
+              <option value="0">Non</option>
+              <option value="1">Oui</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="id_prospect">ID Prospect</label>
+            <input type="number" id="id_prospect" name="id_prospect">
+          </div>
+          
+        </div>
+
+        <button type="submit" name="ajouter">Ajouter</button>
+        <a href="interfaceadmin.php" class="btn btn-secondary">Retour</a>
+      </form>
+    </div>
+  </main>
+  <script>
+    // Fonction pour le bouton "Logout"
+    document.querySelector('.logout').addEventListener('click', () => {
+      alert('Déconnexion en cours...');
+    });
+  </script>
+</body>
+</html>
