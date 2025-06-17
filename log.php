@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Connexion</title>
+    <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color:#003366;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #333;
+    }
+    .container {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+      width: 350px;
+      text-align: center;
+      transition: transform 0.3s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .container:hover {
+      transform: translateY(-5px);
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #555;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #333;
+      transition: border 0.3s ease;
+    }
+    input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+    button {
+      display: inline-block;
+      padding: 12px 25px;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(45deg, #007BFF, #00C6FF);
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: linear-gradient(45deg, #0056b3, #0096f2);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="pamecas.jpg" alt="PAMECAS Logo" width="80" style="border-radius: 10px;">
+    <h2 style="color: #007BFF; font-size: 22px;">🚀 PAMECAS - GESTION DE LA RELATION CLIENT 🚀</h2>
+    <p style="color: #777; font-size: 14px;">Accédez à votre espace personnel pour gérer efficacement vos clients.</p>
+    <?php
+    if (isset($_GET['error'])) {
+        echo '<p class="error">Identifiants invalides</p>';
+    }
+    ?>
+    <form action="login.php" method="POST">
+        <label>Email :</label>
+        <input type="text" name="email" required>
+
+        <label>Mot de passe :</label>
+        <input type="password" name="mot_de_passe" required>
+
+        <button type="submit">Se connecter</button>
+    </form>
+</div>
+
+</body>
+</html>

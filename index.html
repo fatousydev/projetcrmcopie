@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Mon Application CRM</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            text-align: center;
+        }
+
+        /* En-tête avec texte défilant */
+        header {
+            background-color: #4A90E2; /* Bleu clair */
+            color: white;
+            padding: 20px 0;
+            font-size: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            background-color: #4A90E2;
+            padding: 15px 0;
+            position: relative;
+        }
+
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 28px;
+            font-weight: bold;
+            color: white;
+            animation: defilement 10s linear infinite;
+        }
+
+        @keyframes defilement {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        /* Section principale */
+        main {
+            padding: 40px 20px;
+        }
+
+        /* Bouton de connexion */
+        #loginButton {
+            background-color: #1c7ed6; /* Bleu plus foncé */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        #loginButton:hover {
+            background-color: #1864ab;
+        }
+
+        /* Sections d'information */
+        .info-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .info-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            width: 280px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            background-color: #fff;
+        }
+
+        .info-box:hover {
+            transform: scale(1.05);
+        }
+
+        .info-box h3 {
+            color: #1c7ed6; /* Bleu */
+        }
+
+        .info-box p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Pied de page */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: #FFA500; /* Orange */
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .info-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-box {
+                width: 90%;
+            }
+
+            header {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .marquee {
+                font-size: 22px;
+            }
+
+            #loginButton {
+                font-size: 14px;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="marquee-container">
+            <div class="marquee">🚀 BIENVENUE! DALAL AKH DIAM THI PAMECAS - GESTION DES RELATIONS CLIENTS 🚀</div>
+        </div>
+    </header>
+
+    <main>
+        <p style="font-size: 18px; max-width: 800px; margin: auto;">Ce projet vise à améliorer l'efficacité des processus internes, offrir une meilleure expérience aux membres et aux prospects, et fournir des outils de prise de décision performants.</p>
+        
+        <a id="loginButton" href="log.php">Se connecter</a>
+
+        <div class="info-container">
+            <div class="info-box">
+                <h3>📊 Suivi des Ventes</h3>
+                <p>Gardez un œil sur toutes les transactions et ventes réalisées avec des rapports détaillés.</p>
+            </div>
+            <div class="info-box">
+                <h3>🛠️ Gestion des Clients</h3>
+                <p>Ajoutez, modifiez et suivez vos clients pour offrir un meilleur service personnalisé.</p>
+            </div>
+            <div class="info-box">
+                <h3>💡 Outils d'Analyse</h3>
+                <p>Utilisez des tableaux de bord avancés pour analyser les performances et optimiser votre stratégie.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>©2025 PamecasCRM. Tous droits réservés.</p>
+        <a href="#">Visitez notre <strong>Page Contact</strong></a>
+    </footer>
+
+</body>
+</html>
