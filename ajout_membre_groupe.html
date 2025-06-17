@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pamecas - Gestion Membre de Groupe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* En-tête */
+    header {
+      background-color: #65a3f3;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    header .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    header .user-info span {
+      background-color: #0368d9;
+      border-radius: 50%;
+      padding: 10px 15px;
+      font-weight: bold;
+      color: white;
+    }
+    header .logout {
+      background-color: rgb(236, 9, 9);
+      color:white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Contenu principal */
+    main {
+      padding: 20px;
+      background-color:#2c3e50;
+    }
+
+    /* Formulaire d'ajout de client */
+    .form-client {
+      margin-bottom:100px;
+      padding: 15px;
+      background-color: #f4f4f4;
+      border-radius: 5px;
+    }
+    .form-client input, .form-client select, .form-client textarea {
+      margin: 10px 0;
+      padding: 10px;
+      width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .form-group {
+      display: flex;
+      gap: 20px;
+    }
+    .form-group div {
+      flex: 1;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    .btn-secondary {
+      background-color: #f44336;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-left: 10px;
+    }
+    .btn-secondary:hover {
+      background-color: #d32f2f;
+    }
+  </style>
+</head>
+<body>
+  <!-- En-tête -->
+  <header>
+    <div class="logo">
+      <img src="pamecas.jpg" alt="Pamecas" width="70">
+      <h1>PAMECAS - GESTION DES MEMBRES DE GROUPES</h1>
+    </div>
+    <div class="user-info">
+      <span>A</span>
+      <a href="index.html" class="logout">Logout</a>
+    </div>
+  </header>
+  <main>
+    <!-- Formulaire d'ajout de membre de groupe -->
+    <h2 style="text-align: center; color:white">Ajouter membre de groupe</h2>
+    <div class="form-client">
+      <form action="ajout_membre_groupe.php" method="POST">
+        <div class="form-group">
+          <div>
+            <label for="id_groupement">ID Groupement</label>
+            <input type="text" id="id_groupement" name="id_groupement" required>
+          </div>
+          <div>
+            <label for="Numero_membre">Numéro membre</label>
+            <input type="text" id="Numero_membre" name="Numero_membre" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="statut">Statut</label>
+            <select id="statut" name="statut" required>
+              <option value="Actif">Actif</option>
+              <option value="Inactif">Inactif</option>
+              <option value="Suspendu">Suspendu</option>
+              <option value="Radié">Radié</option>
+            </select>
+          </div>
+          <div>
+            <label for="date_adhesion">Date d'adhésion</label>
+            <input type="date" id="date_adhesion" name="date_adhesion" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="nom">Nom</label>
+            <input type="text" id="nom" name="nom" required>
+          </div>
+          <div>
+            <label for="prenom">Prénom</label>
+            <input type="text" id="prenom" name="prenom" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="adress">Adresse</label>
+            <input type="text" id="adress" name="adress" required>
+          </div>
+          <div>
+            <label for="region">Région</label>
+            <input type="text" id="region" name="region" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="date_naissance">Date de naissance</label>
+            <input type="date" id="date_naissance" name="date_naissance">
+          </div>
+          <div>
+            <label for="num_piece_identite">Numéro pièce d'identité</label>
+            <input type="text" id="num_piece_identite" name="num_piece_identite" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="num_passeport">Numéro passeport</label>
+            <input type="text" id="num_passeport" name="num_passeport">
+          </div>
+          <div>
+            <label for="num_telephone">Téléphone</label>
+            <input type="text" id="num_telephone" name="num_telephone" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+          </div>
+          <div>
+            <label for="poste_dans_groupement">Poste dans le groupement</label>
+            <input type="text" id="poste_dans_groupement" name="poste_dans_groupement">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="campagne_id">ID Campagne</label>
+            <input type="number" id="campagne_id" name="campagne_id">
+          </div>
+          <div>
+            <label for="caisse_id">ID Caisse</label>
+            <input type="number" id="caisse_id" name="caisse_id">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="guichet_id">ID Guichet</label>
+            <input type="number" id="guichet_id" name="guichet_id">
+          </div>
+          <div>
+            <label for="a_benefice_credit">A bénéficié de crédit?</label>
+            <select id="a_benefice_credit" name="a_benefice_credit">
+              <option value="0">Non</option>
+              <option value="1">Oui</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div>
+            <label for="commentaire">Commentaire</label>
+            <textarea id="commentaire" name="commentaire" rows="3"></textarea>
+          </div>
+        </div>
+
+        <button type="submit" name="ajouter">Ajouter</button>
+        <a href="interfaceadmin.php" class="btn btn-secondary">Retour</a>
+      </form>
+    </div>
+  </main>
+  <script>
+    // Fonction pour le bouton "Logout"
+    document.querySelector('.logout').addEventListener('click', () => {
+      alert('Déconnexion en cours...');
+    });
+  </script>
+</body>
+</html>
