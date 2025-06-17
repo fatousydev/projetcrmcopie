@@ -1,0 +1,2 @@
+[25-Apr-2025 12:42:32 Europe/Berlin] Erreur journalisation: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crm.campagnes_envoyees' doesn't exist
+[25-Apr-2025 12:44:25 Europe/Berlin] Erreur journalisation: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'crm.campagnes_envoyees' doesn't exist

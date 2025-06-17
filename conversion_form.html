@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+FICHIER : conversion_form.html
+BUT : Afficher le formulaire de conversion prospect→membre
+DATA ATTENDUE :
+  - prospect_id (hidden)
+  - numero_piece (hidden)
+-->
+<html>
+<head>
+    <title>Conversion Prospect → Membre</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 20px auto; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; font-weight: bold; margin-bottom: 5px; }
+        input, select { width: 100%; padding: 8px; box-sizing: border-box; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 15px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Compléter les informations</h1>
+    
+    <form id="conversionForm">
+        <!-- Champs cachés -->
+        <input type="hidden" id="prospect_id" name="prospect_id">
+        <input type="hidden" id="numero_piece" name="numero_piece">
+        
+        <!-- Champs à compléter -->
+        <div class="form-group">
+            <label for="numero_membre">Numéro de membre *</label>
+            <input type="text" id="numero_membre" name="numero_membre" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="date_admission">Date d'admission *</label>
+            <input type="date" id="date_admission" name="date_admission" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="guichet_id">Guichet</label>
+            <select id="guichet_id" name="guichet_id">
+                <option value="1">Principal</option>
+                <option value="2">Secondaire</option>
+            </select>
+        </div>
+        
+        <button type="submit">Valider la conversion</button>
+    </form>
+
+    <script>
+    // Récupération des données initiales
+    const urlParams = new URLSearchParams(window.location.search);
+    document.getElementById('prospect_id').value = urlParams.get('prospect_id');
+    document.getElementById('numero_piece').value = urlParams.get('numero_piece');
+    
+    // Gestion de la soumission
+    document.getElementById('conversionForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Ici ajouter le code AJAX pour process_conversion.php
+    });
+    </script>
+</body>
+</html>
